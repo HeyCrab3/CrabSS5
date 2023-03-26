@@ -16,25 +16,25 @@
         <TextBlock FontFamily="./resources/#HONOR Sans CN" HorizontalAlignment="Left" Margin="24,80,0,0" TextWrapping="Wrap" Text="欢迎使用全新的 CrabSS 5.0" VerticalAlignment="Top" Width="316" FontSize="12" Foreground="{DynamicResource SecondaryTextBrush}"/>
         <hc:Card MouseDown="OpenServer" HorizontalAlignment="Left" Height="176" Margin="24,129,0,0" VerticalAlignment="Top" Width="126" BorderBrush="{x:Null}" Background="{DynamicResource PrimaryBrush}" Foreground="White">
             <Grid Height="166" HorizontalAlignment="Center" VerticalAlignment="Center" Width="128">
-                <TextBlock FontFamily="Segoe Fluent Icons" Text="&#xE753;" Width="76" TextAlignment="Center" HorizontalAlignment="Center" FontSize="48" Margin="0,31,0,93"/>
+                <TextBlock FontFamily="./resources/#Segoe Fluent Icons" Text="&#xE753;" Width="76" TextAlignment="Center" HorizontalAlignment="Center" FontSize="48" Margin="0,31,0,93"/>
                 <TextBlock FontFamily="./resources/#HONOR Sans CN" TextAlignment="Center" Text="开服" Margin="0,99,0,35" FontSize="16"/>
             </Grid>
         </hc:Card>
         <hc:Card HorizontalAlignment="Left" Height="176" Margin="174,129,0,0" VerticalAlignment="Top" Width="126">
             <Grid Height="166" HorizontalAlignment="Center" VerticalAlignment="Center" Width="128">
-                <TextBlock FontFamily="Segoe Fluent Icons" Text="&#xED35;" Width="76" TextAlignment="Center" HorizontalAlignment="Center" FontSize="48" Margin="0,31,0,93"/>
+                <TextBlock FontFamily="./resources/#Segoe Fluent Icons" Text="&#xED35;" Width="76" TextAlignment="Center" HorizontalAlignment="Center" FontSize="48" Margin="0,31,0,93"/>
                 <TextBlock FontFamily="./resources/#HONOR Sans CN" TextAlignment="Center" Text="插件/Mod管理" Margin="0,99,0,35" FontSize="16"/>
             </Grid>
         </hc:Card>
         <hc:Card HorizontalAlignment="Left" Height="176" Margin="324,129,0,0" VerticalAlignment="Top" Width="126">
             <Grid Height="166" HorizontalAlignment="Center" VerticalAlignment="Center" Width="128">
-                <TextBlock FontFamily="Segoe Fluent Icons" Text="&#xED59;" Width="76" TextAlignment="Center" HorizontalAlignment="Center" FontSize="48" Margin="0,31,0,93"/>
+                <TextBlock FontFamily="./resources/#Segoe Fluent Icons" Text="&#xED59;" Width="76" TextAlignment="Center" HorizontalAlignment="Center" FontSize="48" Margin="0,31,0,93"/>
                 <TextBlock FontFamily="./resources/#HONOR Sans CN" TextAlignment="Center" Text="配置文件编辑器" Margin="0,99,0,35" FontSize="16"/>
             </Grid>
         </hc:Card>
         <hc:Card HorizontalAlignment="Left" Height="176" VerticalAlignment="Top" Width="126" Margin="474,129,0,0">
             <Grid Height="166" HorizontalAlignment="Center" VerticalAlignment="Center" Width="128">
-                <TextBlock FontFamily="Segoe Fluent Icons" Text="&#xE968;" Width="76" TextAlignment="Center" HorizontalAlignment="Center" FontSize="48" Margin="0,31,0,93"/>
+                <TextBlock FontFamily="./resources/#Segoe Fluent Icons" Text="&#xE968;" Width="76" TextAlignment="Center" HorizontalAlignment="Center" FontSize="48" Margin="0,31,0,93"/>
                 <TextBlock FontFamily="./resources/#HONOR Sans CN" TextAlignment="Center" Text="联机服务" Margin="0,99,0,35" FontSize="16"/>
             </Grid>
         </hc:Card>

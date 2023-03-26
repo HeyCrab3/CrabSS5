@@ -6,18 +6,29 @@
         xmlns:local="clr-namespace:CrabSS5.child"
         xmlns:hc="https://handyorg.github.io/handycontrol"
         mc:Ignorable="d"
-        WindowStartupLocation="CenterScreen"
+        WindowStartupLocation="CenterScreen" 
+        FontFamily="../resources/#HONOR Sans CN"
         Title="开启服务器" Height="720" Width="1280">
     <hc:Window.Background>
-        <ImageBrush ImageSource="https://api.dreamofice.cn/hoyorandom/img"/>
+        <ImageBrush ImageSource="https://api.dreamofice.cn/hoyorandom/img?game=ys"/>
     </hc:Window.Background>
     <Grid>
         <Border HorizontalAlignment="Left" Height="705" VerticalAlignment="Center" Width="354" RenderTransformOrigin="0.284,0.294" Background="#B2000000" CornerRadius="0,15,15,0">
             <Grid>
-
                 <TextBlock FontFamily="../resources/#HONOR Sans CN Medium" HorizontalAlignment="Left" Margin="24,21,0,0" TextWrapping="Wrap" Text="服务器配置" VerticalAlignment="Top" Width="158" FontSize="24" Foreground="White"/>
                 <TextBlock FontFamily="../resources/#HONOR Sans CN" HorizontalAlignment="Left" Margin="24,52,0,0" TextWrapping="Wrap" Text="您需要在这里进行一些配置，之后就可以开启服务器了" VerticalAlignment="Top" Width="316" FontSize="12" Foreground="{DynamicResource BorderBrush}"/>
                 <Border HorizontalAlignment="Left" Height="45" Margin="10,21,0,0" VerticalAlignment="Top" Width="6" Background="{DynamicResource PrimaryBrush}" CornerRadius="3,3,3,3"/>
+                <TextBox x:Name="corepath" FontFamily="../resources/#HONOR Sans CN" Style="{StaticResource TextBoxExtend}" hc:InfoElement.Necessary="True" hc:IconElement.Width="12" hc:InfoElement.TitlePlacement="Top" hc:InfoElement.Title="服务器内核" HorizontalAlignment="Left" Height="61" Margin="10,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="226" Foreground="White" Background="{x:Null}"/>
+                <Button Click="BrowseCore" FontFamily="../resources/#HONOR Sans CN" Style="{StaticResource ButtonPrimary}" Content="导入" HorizontalAlignment="Left" Height="33" Margin="240,115,0,0" VerticalAlignment="Top" Width="78"/>
+                <hc:NumericUpDown x:Name="m1" FontFamily="../resources/#HONOR Sans CN" Style="{StaticResource NumericUpDownExtend}" hc:InfoElement.Necessary="True" hc:IconElement.Width="12" hc:TitleElement.TitlePlacement="Top" hc:TitleElement.Title="最小内存（M）" HorizontalAlignment="Left" Height="61" Margin="10,153,0,0" VerticalAlignment="Top" Width="128" Foreground="White" Background="{x:Null}"/>
+                <hc:NumericUpDown x:Name="m2" FontFamily="../resources/#HONOR Sans CN" Style="{StaticResource NumericUpDownExtend}" hc:InfoElement.Necessary="True" hc:IconElement.Width="12" hc:TitleElement.TitlePlacement="Top" hc:TitleElement.Title="最大内存（M）" HorizontalAlignment="Left" Height="61" Margin="143,153,0,0" VerticalAlignment="Top" Width="128" Foreground="White" Background="{x:Null}"/>
+                <TextBox x:Name="javapath" FontFamily="../resources/#HONOR Sans CN" Style="{StaticResource TextBoxExtend}" hc:InfoElement.Necessary="True" hc:IconElement.Width="12" hc:TitleElement.TitlePlacement="Top" hc:TitleElement.Title="Java 位置" HorizontalAlignment="Left" Height="61" Margin="10,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="226" Foreground="White" Background="{x:Null}"/>
+                <Button Click="BrowseJava" FontFamily="../resources/#HONOR Sans CN" Style="{StaticResource ButtonPrimary}" Content="浏览" HorizontalAlignment="Left" Height="33" Margin="240,247,0,0" VerticalAlignment="Top" Width="78"/>
+                <TextBox x:Name="extra" FontFamily="../resources/#HONOR Sans CN" Style="{StaticResource TextBoxExtend}" hc:InfoElement.Necessary="True" hc:IconElement.Width="12" hc:TitleElement.TitlePlacement="Top" hc:TitleElement.Title="附加参数" HorizontalAlignment="Left" Height="61" Margin="10,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="310" Foreground="White" Background="{x:Null}"/>
+                <TextBox x:Name="stopcmd"  FontFamily="../resources/#HONOR Sans CN" Text="stop" Style="{StaticResource TextBoxExtend}" hc:InfoElement.Necessary="True" hc:IconElement.Width="12" hc:TitleElement.TitlePlacement="Top" hc:TitleElement.Title="关服命令（一般无需填写）" HorizontalAlignment="Left" Height="61" Margin="10,351,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="310" Foreground="White" Background="{x:Null}"/>
+                <Button Click="Start_Click" x:Name="Start" Style="{StaticResource ButtonPrimary}" FontFamily="../resources/#HONOR Sans CN" Content="启动服务器" HorizontalAlignment="Left" Height="45" Margin="10,438,0,0" VerticalAlignment="Top" Width="310"/>
+                <Button x:Name="Down1" FontFamily="../resources/#HONOR Sans CN" Content="下载 Java 17 (AdoptOpenJDK)" HorizontalAlignment="Left" Height="45" Margin="10,505,0,0" VerticalAlignment="Top" Width="310" Click="Down1_Click"/>
+                <Button x:Name="Down2" FontFamily="../resources/#HONOR Sans CN" Content="下载 Authlib Injector" HorizontalAlignment="Left" Height="45" Margin="10,577,0,0" VerticalAlignment="Top" Width="310" Click="Down2_Click"/>
             </Grid>
         </Border>
         <Border HorizontalAlignment="Left" Height="539" VerticalAlignment="Top" Width="824" RenderTransformOrigin="0.284,0.294" Background="#B2000000" Margin="406,19,0,0" CornerRadius="15,15,15,15">
@@ -25,11 +36,22 @@
                 <TextBlock FontFamily="../resources/#HONOR Sans CN Medium" HorizontalAlignment="Left" Margin="24,21,0,0" TextWrapping="Wrap" Text="命令输出区" VerticalAlignment="Top" Width="158" FontSize="24" Foreground="{DynamicResource DarkDefaultBrush}"/>
                 <TextBlock FontFamily="../resources/#HONOR Sans CN" HorizontalAlignment="Left" Margin="24,52,0,0" TextWrapping="Wrap" Text="这里显示从服务器输出的日志以及报错" VerticalAlignment="Top" Width="316" FontSize="12" Foreground="{DynamicResource BorderBrush}"/>
                 <Border HorizontalAlignment="Left" Height="45" Margin="10,21,0,0" VerticalAlignment="Top" Width="6" Background="{DynamicResource PrimaryBrush}" CornerRadius="3,3,3,3"/>
+                <RichTextBox x:Name="ConsoleOutput" Margin="5,81,5,43" Background="{x:Null}" Foreground="White" BorderBrush="White">
+                    <FlowDocument>
+                        <Paragraph>
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+                <TextBox FontFamily="../resources/#HONOR Sans CN" x:Name="command" Style="{StaticResource TextBoxExtend}" hc:TitleElement.TitlePlacement="Left" hc:TitleElement.Title="输入指令..."  HorizontalAlignment="Left" Height="17" Margin="5,501,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="532" Foreground="White" Background="{x:Null}"/>
+                <Button FontFamily="../resources/#HONOR Sans CN" Style="{StaticResource ButtonIcon}" hc:IconElement.Geometry="{StaticResource RightGeometry}" HorizontalAlignment="Left" Height="30" Margin="545,501,0,0" VerticalAlignment="Top" Width="31" Foreground="White" Click="Button_Click"/>
+                <Button Click="Start_Click" x:Name="start" Style="{StaticResource ButtonPrimary}" Content="启动" HorizontalAlignment="Left" Height="30" Margin="576,501,0,0" VerticalAlignment="Top" Width="74"/>
+                <Button x:Name="restart" IsEnabled="False" Content="重启" HorizontalAlignment="Left" Height="30" Margin="655,501,0,0" VerticalAlignment="Top" Width="74" Background="{DynamicResource AccentBrush}" Foreground="White" BorderBrush="{x:Null}" Click="restart_Click"/>
+                <Button x:Name="stop" IsEnabled="False" Style="{StaticResource ButtonDanger}" Content="关闭" HorizontalAlignment="Left" Height="30" Margin="734,501,0,0" VerticalAlignment="Top" Width="74" Background="{DynamicResource DangerBrush}" Foreground="White" BorderBrush="{x:Null}" Click="stop_Click"/>
             </Grid>
         </Border>
         <Border HorizontalAlignment="Left" Height="114" VerticalAlignment="Top" Width="255" RenderTransformOrigin="0.284,0.294" Background="#B2000000" Margin="406,563,0,0" CornerRadius="15,15,15,15">
             <Grid>
-                <hc:CircleProgressBar x:Name="CPURing" ShowText="True" IsIndeterminate="True" HorizontalAlignment="Left" Height="48" Margin="19,0,0,0" VerticalAlignment="Center" Width="48"/>
+                <hc:CircleProgressBar x:Name="CPURing" IsIndeterminate="True" HorizontalAlignment="Left" Height="48" Margin="19,0,0,0" VerticalAlignment="Center" Width="48" BorderBrush="{x:Null}"/>
                 <TextBlock x:Name="CPU" FontFamily="../resources/#HONOR Sans CN Medium" HorizontalAlignment="Left" Margin="87,37,0,0" TextWrapping="Wrap" Text="等待数据" VerticalAlignment="Top" Width="121" FontSize="20" Foreground="{DynamicResource DarkDefaultBrush}"/>
                 <TextBlock FontFamily="../resources/#HONOR Sans CN" HorizontalAlignment="Left" Margin="87,63,0,0" TextWrapping="Wrap" Text="CPU 利用率" VerticalAlignment="Top" Width="158" Foreground="{DynamicResource BorderBrush}"/>
             </Grid>
@@ -44,10 +66,11 @@
         </Border>
         <Border HorizontalAlignment="Left" Height="114" VerticalAlignment="Top" Width="256" RenderTransformOrigin="0.284,0.294" Background="#B2000000" Margin="690,564,0,0" CornerRadius="15,15,15,15">
             <Grid>
-                <hc:CircleProgressBar ShowText="True" x:Name="RamRing" IsIndeterminate="True" HorizontalAlignment="Left" Height="48" Margin="19,0,0,0" VerticalAlignment="Center" Width="48"/>
+                <hc:CircleProgressBar x:Name="RamRing" IsIndeterminate="True" HorizontalAlignment="Left" Height="48" Margin="19,0,0,0" VerticalAlignment="Center" Width="48" BorderBrush="{x:Null}"/>
                 <TextBlock x:Name="RAM" FontFamily="../resources/#HONOR Sans CN Medium" HorizontalAlignment="Left" Margin="87,37,0,0" TextWrapping="Wrap" Text="等待数据" VerticalAlignment="Top" Width="121" FontSize="20" Foreground="{DynamicResource DarkDefaultBrush}"/>
                 <TextBlock FontFamily="../resources/#HONOR Sans CN" HorizontalAlignment="Left" Margin="87,63,0,0" TextWrapping="Wrap" Text="内存利用率" VerticalAlignment="Top" Width="158" Foreground="{DynamicResource BorderBrush}"/>
             </Grid>
         </Border>
+        <ProgressBar x:Name="OperationInProgress" Visibility="Hidden" IsIndeterminate="True" Style="{DynamicResource ProgressBarFlat}" HorizontalAlignment="Left" Height="3" VerticalAlignment="Top" Width="1280"/>
     </Grid>
 </hc:Window>
