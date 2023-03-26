@@ -1,0 +1,53 @@
+﻿<hc:Window x:Class="CrabSS5.child.server"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CrabSS5.child"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="开启服务器" Height="720" Width="1280">
+    <hc:Window.Background>
+        <ImageBrush ImageSource="https://api.dreamofice.cn/hoyorandom/img"/>
+    </hc:Window.Background>
+    <Grid>
+        <Border HorizontalAlignment="Left" Height="705" VerticalAlignment="Center" Width="354" RenderTransformOrigin="0.284,0.294" Background="#B2000000" CornerRadius="0,15,15,0">
+            <Grid>
+
+                <TextBlock FontFamily="../resources/#HONOR Sans CN Medium" HorizontalAlignment="Left" Margin="24,21,0,0" TextWrapping="Wrap" Text="服务器配置" VerticalAlignment="Top" Width="158" FontSize="24" Foreground="White"/>
+                <TextBlock FontFamily="../resources/#HONOR Sans CN" HorizontalAlignment="Left" Margin="24,52,0,0" TextWrapping="Wrap" Text="您需要在这里进行一些配置，之后就可以开启服务器了" VerticalAlignment="Top" Width="316" FontSize="12" Foreground="{DynamicResource BorderBrush}"/>
+                <Border HorizontalAlignment="Left" Height="45" Margin="10,21,0,0" VerticalAlignment="Top" Width="6" Background="{DynamicResource PrimaryBrush}" CornerRadius="3,3,3,3"/>
+            </Grid>
+        </Border>
+        <Border HorizontalAlignment="Left" Height="539" VerticalAlignment="Top" Width="824" RenderTransformOrigin="0.284,0.294" Background="#B2000000" Margin="406,19,0,0" CornerRadius="15,15,15,15">
+            <Grid>
+                <TextBlock FontFamily="../resources/#HONOR Sans CN Medium" HorizontalAlignment="Left" Margin="24,21,0,0" TextWrapping="Wrap" Text="命令输出区" VerticalAlignment="Top" Width="158" FontSize="24" Foreground="{DynamicResource DarkDefaultBrush}"/>
+                <TextBlock FontFamily="../resources/#HONOR Sans CN" HorizontalAlignment="Left" Margin="24,52,0,0" TextWrapping="Wrap" Text="这里显示从服务器输出的日志以及报错" VerticalAlignment="Top" Width="316" FontSize="12" Foreground="{DynamicResource BorderBrush}"/>
+                <Border HorizontalAlignment="Left" Height="45" Margin="10,21,0,0" VerticalAlignment="Top" Width="6" Background="{DynamicResource PrimaryBrush}" CornerRadius="3,3,3,3"/>
+            </Grid>
+        </Border>
+        <Border HorizontalAlignment="Left" Height="114" VerticalAlignment="Top" Width="255" RenderTransformOrigin="0.284,0.294" Background="#B2000000" Margin="406,563,0,0" CornerRadius="15,15,15,15">
+            <Grid>
+                <hc:CircleProgressBar x:Name="CPURing" ShowText="True" IsIndeterminate="True" HorizontalAlignment="Left" Height="48" Margin="19,0,0,0" VerticalAlignment="Center" Width="48"/>
+                <TextBlock x:Name="CPU" FontFamily="../resources/#HONOR Sans CN Medium" HorizontalAlignment="Left" Margin="87,37,0,0" TextWrapping="Wrap" Text="等待数据" VerticalAlignment="Top" Width="121" FontSize="20" Foreground="{DynamicResource DarkDefaultBrush}"/>
+                <TextBlock FontFamily="../resources/#HONOR Sans CN" HorizontalAlignment="Left" Margin="87,63,0,0" TextWrapping="Wrap" Text="CPU 利用率" VerticalAlignment="Top" Width="158" Foreground="{DynamicResource BorderBrush}"/>
+            </Grid>
+        </Border>
+        <Border HorizontalAlignment="Left" Height="114" VerticalAlignment="Top" Width="255" RenderTransformOrigin="0.284,0.294" Background="#B2000000" Margin="975,563,0,0" CornerRadius="15,15,15,15">
+            <Grid>
+                <TextBlock x:Name="PID" FontFamily="../resources/#HONOR Sans CN Medium" HorizontalAlignment="Left" Margin="24,37,0,0" TextWrapping="Wrap" Text="未启动" VerticalAlignment="Top" Width="121" FontSize="20" Foreground="{DynamicResource DarkDefaultBrush}"/>
+                <TextBlock FontFamily="../resources/#HONOR Sans CN" HorizontalAlignment="Left" Margin="24,63,0,0" TextWrapping="Wrap" Text="程序PID" VerticalAlignment="Top" Width="158" Foreground="{DynamicResource BorderBrush}"/>
+                <TextBlock x:Name="CrabSS_Ram" FontFamily="../resources/#HONOR Sans CN Medium" HorizontalAlignment="Left" Margin="145,37,0,0" TextWrapping="Wrap" Text="等待数据" VerticalAlignment="Top" Width="105" FontSize="20" Foreground="{DynamicResource DarkDefaultBrush}"/>
+                <TextBlock FontFamily="../resources/#HONOR Sans CN" HorizontalAlignment="Left" Margin="145,63,0,0" TextWrapping="Wrap" Text="当前程序内存占用" VerticalAlignment="Top" Width="96" Foreground="{DynamicResource BorderBrush}"/>
+            </Grid>
+        </Border>
+        <Border HorizontalAlignment="Left" Height="114" VerticalAlignment="Top" Width="256" RenderTransformOrigin="0.284,0.294" Background="#B2000000" Margin="690,564,0,0" CornerRadius="15,15,15,15">
+            <Grid>
+                <hc:CircleProgressBar ShowText="True" x:Name="RamRing" IsIndeterminate="True" HorizontalAlignment="Left" Height="48" Margin="19,0,0,0" VerticalAlignment="Center" Width="48"/>
+                <TextBlock x:Name="RAM" FontFamily="../resources/#HONOR Sans CN Medium" HorizontalAlignment="Left" Margin="87,37,0,0" TextWrapping="Wrap" Text="等待数据" VerticalAlignment="Top" Width="121" FontSize="20" Foreground="{DynamicResource DarkDefaultBrush}"/>
+                <TextBlock FontFamily="../resources/#HONOR Sans CN" HorizontalAlignment="Left" Margin="87,63,0,0" TextWrapping="Wrap" Text="内存利用率" VerticalAlignment="Top" Width="158" Foreground="{DynamicResource BorderBrush}"/>
+            </Grid>
+        </Border>
+    </Grid>
+</hc:Window>
